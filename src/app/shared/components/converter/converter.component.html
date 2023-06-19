@@ -18,8 +18,8 @@ top: 70px;">
 
                 <div style="display: flex;">
                     <div class="field-wrap w-45">
-                        <label for="from">From</label>
-                        <select name="from" id="from" formControlName="from" [attr.disabled]="disable ? '' : null">
+                        <label for="from">Form</label>
+                        <select name="from" id="from" formControlName="from">
                             <option [value]="country" *ngFor="let country of countries">{{country}}</option>
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
@@ -32,7 +32,7 @@ top: 70px;">
                     </div>
                     <div class="field-wrap w-45">
                         <label for="to">To</label>
-                        <select name="to" id="to" formControlName="to" [attr.disabled]="disable ? '' : null">
+                        <select name="to" id="to" formControlName="to">
                             <option [value]="country" *ngFor="let country of countries">{{country}}</option>
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>

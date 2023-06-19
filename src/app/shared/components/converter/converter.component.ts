@@ -34,6 +34,11 @@ export class ConverterComponent implements OnInit, OnChanges {
       'to': new UntypedFormControl(this.currency, [Validators.required])
     });
     this.convert();
+    if (this.disable) {
+      this.form.get('from')?.disable();
+      this.form.get('to')?.disable();
+      this.form.updateValueAndValidity();
+    }
 
   }
 
