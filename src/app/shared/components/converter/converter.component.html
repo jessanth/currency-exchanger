@@ -1,5 +1,4 @@
-<form [formGroup]="form" style="position: sticky;
-top: 70px;">
+<form [formGroup]="form" style="position: sticky;top: 70px;">
     <div class="card-container">
         <div class="card">
             <div class="w-40" style="display: flex;
@@ -13,14 +12,13 @@ top: 70px;">
                     1.00 EUR = {{oneUSDValue}} {{currency | uppercase}}
                 </div>
             </div>
-
             <div class="w-60">
-
                 <div style="display: flex;">
                     <div class="field-wrap w-45">
                         <label for="from">Form</label>
                         <select name="from" id="from" formControlName="from">
                             <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+                            <!-- Exceed API Limitation, so using static values to check -->
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
                             <option value="GBP">GBP</option>
@@ -34,6 +32,7 @@ top: 70px;">
                         <label for="to">To</label>
                         <select name="to" id="to" formControlName="to">
                             <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+                            <!-- Exceed API Limitation, so using static values to check -->
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
                             <option value="GBP">GBP</option>
