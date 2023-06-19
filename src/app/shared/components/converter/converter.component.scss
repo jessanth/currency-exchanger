@@ -1,0 +1,15 @@
+@import '../../scss/card';
+@import '../../scss/field';
+@import '../../scss/width';
+@import '../../scss/button';
+.section{
+    width: 50%;
+}
+.converted-value-container{
+    display: flex;
+    border: 1px solid;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}

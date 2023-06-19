@@ -1,0 +1,13 @@
+.field-wrap{
+    display:flex;
+    flex-direction:column;
+    margin: 5px;
+    
+    input{
+padding: 5px;
+    }
+
+    select{
+        padding: 6px;
+    }
+}

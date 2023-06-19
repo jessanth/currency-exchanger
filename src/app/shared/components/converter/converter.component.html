@@ -1,0 +1,48 @@
+<div class="card-container">
+    <div class="card">
+        <div class="w-40">
+            <div class="field-wrap">
+                <label for="fname">Amount</label>
+                <input type="text" id="fname" name="fname">
+            </div>
+            <div class="converted-value-container">
+                1.00 EUR = {{oneUSDValue}} {{currency | uppercase}}
+            </div>
+        </div>
+
+        <div class="w-60">
+
+            <div style="display: flex;">
+                <div class="field-wrap w-45">
+                    <label for="cars">From</label>
+                    <select name="cars" id="cars">
+                        <option value="volvo">EUR</option>
+                    </select>
+                </div>
+                <div class="w-10">
+                    <img src="../../../../assets/images/convert.png" width="80">
+                </div>
+                <div class="field-wrap w-45">
+                    <label for="cars">To</label>
+                    <select name="cars" id="cars">
+                        <option value="volvo">USD</option>
+                        <option value="saab">GBP</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="w-100" type="button" (click)="convert()">Convert</button>
+            </div>
+            <div style="display: flex;align-items: center;">
+                <div class="w-70 converted-value-container">
+                    {{convertedUSDValue}} {{currency | uppercase}}
+                </div>
+                <div class="w-30">
+                    <button class="w-100" type="button">More Details</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
