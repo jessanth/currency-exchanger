@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CurrencyExchangerService } from 'src/app/Services/currency-exchanger.service';
 
@@ -16,7 +16,7 @@ export class ConverterComponent implements OnInit, OnChanges {
   @Input() from: string = "";
   @Input() hideMore: boolean = false;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   countries: any = [];
   oneUSDValue: number = 0;
   convertedUSDValue: number = 0;
@@ -28,10 +28,10 @@ export class ConverterComponent implements OnInit, OnChanges {
   }
 
   initForm() {
-    this.form = new FormGroup({
-      amount: new FormControl(this.amount, [Validators.required]),
-      'from': new FormControl(this.from, [Validators.required]),
-      'to': new FormControl(this.currency, [Validators.required])
+    this.form = new UntypedFormGroup({
+      amount: new UntypedFormControl(this.amount, [Validators.required]),
+      'from': new UntypedFormControl(this.from, [Validators.required]),
+      'to': new UntypedFormControl(this.currency, [Validators.required])
     });
     this.convert();
 
