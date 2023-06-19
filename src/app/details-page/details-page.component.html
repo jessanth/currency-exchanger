@@ -1,12 +1,12 @@
 <div class="card" style="display: flex;justify-content: space-between;">
     <div>
-        <h1>EUR - European Union Euro</h1>
+        <h1>{{from}}</h1>
     </div>
     <div>
         <button routerLink="/home-page">Back to Home</button>
     </div>
 </div>
-<app-converter [currency]="pageName"></app-converter>
+<app-converter [currency]="pageName" [disable]="true" [amount]="amount" [hideMore]="true" [from]="from"></app-converter>
 <div style="display: flex;" class="card">
     <canvas baseChart width="800" height="400" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
         [legend]="lineChartLegend">

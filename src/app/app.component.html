@@ -33,9 +33,11 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #fff;
     color: white;
     font-weight: 600;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    position: fixed;
   }
 
   .toolbar #twitter-logo {
@@ -276,13 +278,15 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img width="100" alt="Angular Logo" src="../assets/images/logo/logo.png" />
-  <span>Currency Exchanger</span>
+  <img width="70" style="scale: 1.5;" alt="Angular Logo" src="../assets/images/logo/logo.png" />
+  <span style="color:#5b6e80">Currency Exchanger</span>
   <div class="spacer"></div>
-  <a aria-label="Angular on twitter" class="nav-item" routerLink="/details-page/USD" title="Twitter">
+  <a aria-label="Angular on twitter" class="nav-item button" [routerLink]="['/details-page/USD']"
+    [queryParams]="{from: 'EUR'}" title="Twitter">
     EUR-USD Details
   </a>
-  <a aria-label="Angular on YouTube" class="nav-item" routerLink="/details-page/GBP" title="YouTube">
+  <a aria-label="Angular on YouTube" class="nav-item button" [routerLink]="['/details-page/GBP']"
+    [queryParams]="{from: 'EUR'}" title="YouTube">
     EUR-GBP Details
   </a>
 </div>

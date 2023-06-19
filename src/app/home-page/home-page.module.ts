@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomePageRoutingModule } from './home-page-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { HomePageRoutingModule } from './home-page-routing.module';
   imports: [
     CommonModule,
     HomePageRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class HomePageModule { }

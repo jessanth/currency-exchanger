@@ -1,4 +1,4 @@
-<app-converter (dataEmitter)="emittedData($event)"></app-converter>
+<app-converter (dataEmitter)="emittedData($event)" [currency]="'USD'" [from]="'EUR'" [disable]="false"></app-converter>
 
 <div style="display: flex;flex-wrap: wrap;">
     <ng-container *ngFor="let currecny of popularCurrencies">
