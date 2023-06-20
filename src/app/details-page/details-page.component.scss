@@ -1,3 +1,10 @@
 @import '../shared/scss/card';
 @import '../shared/scss/width';
 @import '../shared/scss/button';
+
+@media screen and (max-width: 450px) {
+    .chart{
+        width: 300px !important;
+    }
+   
+}

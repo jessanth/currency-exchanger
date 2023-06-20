@@ -12,7 +12,7 @@ export class ConverterComponent implements OnInit, OnChanges {
   @Input() currency: string = "USD";
   @Output() dataEmitter = new EventEmitter();
   @Input() disable: boolean = false;
-  @Input() amount: number = 0;
+  @Input() amount: number = 1;
   @Input() from: string = "";
   @Input() hideMore: boolean = false;
 
@@ -20,6 +20,7 @@ export class ConverterComponent implements OnInit, OnChanges {
   countries: any = [];
   oneUSDValue: number = 0;
   convertedUSDValue: number = 0;
+  currencyData: any;
   constructor(private currencyExchangerService: CurrencyExchangerService, private router: Router) {
   }
 
@@ -47,18 +48,29 @@ export class ConverterComponent implements OnInit, OnChanges {
   }
 
   convert() {
-    this.currencyExchangerService.convert().subscribe(res => {
-      if (res && res.rates) {
-        this.countries = Object.keys(res.rates);
-        this.oneUSDValue = 1 * res.rates[this.currency]
-        this.convertedUSDValue = this.form.get('amount')?.value * res.rates[this.currency];
-        let obj = {
-          enteredValue: 25,
-          resData: res.rates
+    if (this.form.get('amount')?.value) {
+      this.currencyExchangerService.convert(this.form.get('from')?.value, this.form.get('to')?.value).subscribe(res => {
+        if (res && res.rates) {
+          this.currency = this.form.get('to')?.value;
+          this.currencyData = res.rates;
+          this.countries = Object.keys(res.rates);
+          this.oneUSDValue = 1 * res.rates[this.form.get('to')?.value]
+          this.convertedUSDValue = this.form.get('amount')?.value * res.rates[this.form.get('to')?.value];
+          let obj = {
+            enteredValue: 25,
+            resData: res.rates
+          }
+          this.dataEmitter.emit(obj);
         }
-        this.dataEmitter.emit(obj);
-      }
-    })
+      })
+    } else {
+      alert("Please enter amount.")
+    }
+
+  }
+
+  getCurrentRate() {
+
   }
 
 

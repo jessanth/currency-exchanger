@@ -1,6 +1,6 @@
 <app-converter (dataEmitter)="emittedData($event)" [currency]="'USD'" [from]="'EUR'" [disable]="false"></app-converter>
 
-<div style="display: flex;flex-wrap: wrap;">
+<div style="display: flex;flex-wrap: wrap;justify-content: center;">
     <ng-container *ngFor="let currecny of popularCurrencies">
         <div class="card w-29" style="display: flex;flex-direction: column;" *ngIf="rates[currecny]">
             <h2>{{currecny}}</h2>

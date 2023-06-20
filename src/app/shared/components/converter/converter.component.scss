@@ -14,3 +14,16 @@
     border-radius: 5px;
     
 }
+
+.swap-container{
+    display: flex;
+    align-items:center;
+}
+
+@media screen and (max-width: 450px) {
+    .swap-img{
+        width: 20px !important;
+        margin-top: 20px !important;
+    }
+   
+}
